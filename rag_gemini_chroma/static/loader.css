@@ -1,0 +1,78 @@
+.rag-loader-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(6px);
+    background: rgba(3, 8, 18, 0.48);
+}
+
+.rag-loader-core {
+    width: 220px;
+    height: 220px;
+    position: relative;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle, rgba(10, 22, 44, 0.95) 36%, rgba(7, 15, 30, 0.76) 100%);
+    box-shadow:
+        0 0 28px rgba(36, 200, 255, 0.24),
+        inset 0 0 26px rgba(67, 129, 255, 0.22);
+}
+
+.rag-ring {
+    position: absolute;
+    border-radius: 999px;
+    border-style: solid;
+    border-color: transparent;
+    filter: drop-shadow(0 0 10px rgba(59, 214, 255, 0.65));
+}
+
+.ring-1 {
+    width: 152px;
+    height: 152px;
+    border-width: 5px;
+    border-top-color: #59d8ff;
+    border-right-color: rgba(89, 216, 255, 0.55);
+    animation: ringSpin 1.25s linear infinite;
+}
+
+.ring-2 {
+    width: 120px;
+    height: 120px;
+    border-width: 4px;
+    border-left-color: #4f89ff;
+    border-bottom-color: rgba(79, 137, 255, 0.52);
+    animation: ringSpinReverse 1.05s linear infinite;
+}
+
+.ring-3 {
+    width: 88px;
+    height: 88px;
+    border-width: 3px;
+    border-top-color: #20d4d7;
+    border-left-color: rgba(32, 212, 215, 0.5);
+    animation: ringSpin 0.9s linear infinite;
+}
+
+.rag-loader-text {
+    position: absolute;
+    font-size: 0.95rem;
+    letter-spacing: 0.04em;
+    font-weight: 700;
+    color: #dff6ff;
+    text-shadow: 0 0 8px rgba(87, 230, 255, 0.55);
+}
+
+@keyframes ringSpin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes ringSpinReverse {
+    from { transform: rotate(360deg); }
+    to { transform: rotate(0deg); }
+}

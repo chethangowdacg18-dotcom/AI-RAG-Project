@@ -1,0 +1,209 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap");
+
+:root {
+    --bg-main: #070b16;
+    --bg-glass: rgba(15, 22, 36, 0.72);
+    --text-main: #e8f1ff;
+    --text-dim: #a7b6ce;
+    --accent-cyan: #27d3ff;
+    --accent-blue: #4b7cff;
+    --card-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+    --border-soft: rgba(120, 170, 255, 0.24);
+}
+
+html, body, [class*="css"] {
+    font-family: "Manrope", sans-serif;
+}
+
+.stApp {
+    background: radial-gradient(1200px 620px at 100% 0%, #0e2438 0%, #070b16 55%);
+    color: var(--text-main);
+}
+
+.rag-bg {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.22;
+    filter: blur(2.2px);
+}
+
+.rag-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(6, 10, 20, 0.62);
+}
+
+.rag-bg-home { background-image: url("static/images/home_bg.jpg"); }
+
+.rag-bg-embed { background-image: url("static/images/embed_bg.jpg"); }
+.rag-bg-chatbot { background-image: url("static/images/chatbot_bg.jpg"); }
+.rag-bg-db { background-image: url("static/images/db_bg.avif"); }
+
+.home-wrap {
+    text-align: center;
+    margin: 4.5rem auto 2rem;
+}
+
+.home-wrap h1 {
+    color: #f2f7ff;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    margin-bottom: 0.35rem;
+}
+
+.home-wrap p {
+    color: var(--text-dim);
+    font-size: 1.05rem;
+    margin-bottom: 1.2rem;
+}
+
+body[data-rag-page="home"] div.stButton > button {
+    min-height: 120px;
+    margin: 0.55rem 0;
+    border-radius: 20px !important;
+    border: 1px solid rgba(88, 184, 255, 0.45) !important;
+    background: linear-gradient(135deg, rgba(24, 41, 77, 0.94), rgba(20, 75, 124, 0.9)) !important;
+    color: #f4fbff !important;
+    font-size: 1.2rem !important;
+    font-weight: 800 !important;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+body[data-rag-page="home"] div.stButton > button:hover {
+    transform: translateY(-2px) scale(1.015);
+    border-color: #66deff !important;
+    box-shadow: 0 22px 44px rgba(26, 168, 255, 0.35);
+    color: #ffffff !important;
+}
+
+body[data-rag-page]:not([data-rag-page="home"]) div.stButton > button {
+    border-radius: 12px !important;
+    border: 1px solid #2f4d76 !important;
+    background: linear-gradient(130deg, #12203a, #193055) !important;
+    color: #edf6ff !important;
+    font-weight: 700 !important;
+}
+
+body[data-rag-page]:not([data-rag-page="home"]) div.stButton > button:hover {
+    color: #101a2e !important;
+    background: linear-gradient(130deg, #80d9ff, #a6bfff) !important;
+}
+
+.page-title {
+    margin-top: 0.3rem;
+    margin-bottom: 0.2rem;
+    font-size: clamp(1.55rem, 2.2vw, 2.2rem);
+    color: #f3f7ff;
+}
+
+.page-subtitle {
+    margin-bottom: 1.1rem;
+    color: #bad2f6;
+}
+
+.section-title {
+    color: #e5f0ff;
+    margin: 0.9rem 0 0.35rem;
+}
+
+.chip-ok, .chip-muted {
+    padding: 0.6rem 0.85rem;
+    border-radius: 999px;
+    display: inline-block;
+    margin: 0.35rem 0 0.8rem;
+    font-weight: 600;
+}
+
+.chip-ok {
+    border: 1px solid rgba(77, 232, 188, 0.45);
+    background: rgba(30, 95, 78, 0.33);
+    color: #cbffe9;
+}
+
+.chip-muted {
+    border: 1px solid rgba(150, 180, 220, 0.35);
+    background: rgba(26, 36, 57, 0.52);
+    color: #c7d6f2;
+}
+
+section[data-testid="stSidebar"] {
+    background: linear-gradient(180deg, #090f24 0%, #0b1536 52%, #0a173d 100%) !important;
+    border-right: 1px solid var(--border-soft);
+}
+
+section[data-testid="stSidebar"] * {
+    color: #e8f2ff !important;
+}
+
+/* Hide Streamlit's default auto-generated multipage navigation */
+section[data-testid="stSidebarNav"] {
+    display: none !important;
+}
+
+div[data-testid="stFileUploaderDropzone"] {
+    background: rgba(13, 21, 36, 0.85) !important;
+    border: 1px dashed #5076aa !important;
+    border-radius: 14px !important;
+}
+
+div[data-testid="stFileUploaderDropzone"] * {
+    color: #edf4ff !important;
+}
+
+div[data-testid="stChatMessage"] {
+    border: 1px solid rgba(110, 154, 214, 0.32);
+    border-radius: 14px;
+    background: rgba(15, 25, 42, 0.72);
+    backdrop-filter: blur(4px);
+    animation: fadeInMessage 0.24s ease;
+}
+
+div[data-testid="stChatMessage"] p,
+div[data-testid="stChatMessage"] span,
+div[data-testid="stChatMessage"] div {
+    color: #f2f6ff !important;
+}
+
+div[data-testid="stChatInput"] input {
+    color: #eef5ff !important;
+}
+
+div[data-testid="stMetric"] {
+    border-radius: 14px;
+    border: 1px solid rgba(106, 162, 228, 0.32);
+    background: rgba(15, 26, 44, 0.78);
+}
+
+div[data-testid="stMetricLabel"],
+div[data-testid="stMetricValue"] {
+    color: #f3f7ff !important;
+}
+
+@keyframes fadeInMessage {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .home-wrap {
+        margin-top: 2.6rem;
+    }
+
+    body[data-rag-page="home"] div.stButton > button {
+        min-height: 96px;
+        font-size: 1.05rem !important;
+    }
+}
+
+
